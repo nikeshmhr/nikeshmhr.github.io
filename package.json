@@ -1,12 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "nikeshmhr-blog",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "My Personal blog",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "author": "Nikesh Maharjan <nikeshmhr@gmail.com>",
   "dependencies": {
     "gatsby": "^4.2.0",
     "gatsby-plugin-feed": "^4.2.0",
@@ -35,15 +32,10 @@
   "devDependencies": {
     "prettier": "^2.4.1"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
-  "keywords": [
-    "gatsby"
-  ],
   "license": "0BSD",
-  "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/nikeshmhr/nikeshmhr.github.io.git"
   },
   "scripts": {
     "build": "gatsby build",

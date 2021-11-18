@@ -1,14 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Nikesh Maharjan`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Nikesh Maharjan`,
+      summary: `who lives and works in Kathmandu building useful things.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `Personal blog | Nikesh Maharjan`,
+    siteUrl: `https://nikeshmhr.github.io/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `nikeshmhr`,
+      github: `nikeshmhr`,
     },
   },
   plugins: [
@@ -105,7 +106,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            title: "Nikesh Maharjan Blog RSS Feed",
           },
         ],
       },
@@ -121,7 +122,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/profile_picture.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,
