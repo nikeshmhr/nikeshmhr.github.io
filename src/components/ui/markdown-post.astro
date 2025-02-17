@@ -69,7 +69,7 @@ const diffInDays = getDiffInDays(new Date(), latestDate);
 </article>
 
 <script>
-  let copyButtonLabel = "Copy";
+  let copyButtonLabel = "Copy Code";
   let codeBlocks = Array.from(document.querySelectorAll("pre"));
 
   for (let codeBlock of codeBlocks) {
@@ -96,10 +96,12 @@ const diffInDays = getDiffInDays(new Date(), latestDate);
 
     await navigator.clipboard.writeText(text);
 
+    button.classList.add("bg-dracula-purple-500");
     button.innerText = "Copied";
 
     setTimeout(() => {
       button.innerText = copyButtonLabel;
+      button.classList.remove("bg-dracula-purple-500");
     }, 1000);
   }
 </script>

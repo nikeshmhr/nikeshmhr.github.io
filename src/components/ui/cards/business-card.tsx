@@ -12,7 +12,7 @@ export default function BusinessCard({ lang }: { lang: Lang }) {
     <motion.div
       initial={{ opacity: initialOpacity, x: initialX }}
       whileInView={{ opacity: 1, x: 0 }}
-      className="card-static p-8 text-pretty flex flex-col sm:flex-row gap-12 items-center w-full md:w-2/3"
+      className="card-static p-8 text-pretty flex flex-col sm:flex-row gap-12 items-center w-full"
     >
       <motion.img
         src={avatarImage.src}

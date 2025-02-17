@@ -21,14 +21,8 @@ export async function GET(context: any) {
         description: getDescFromMdString(post.body),
         author: AUTHOR.name,
         pubDate: post.data.date,
-        link: `${lang}/posts/${slug}`,
-        enclosure: {
-          url: `${lang}/og-images/${slug}.png`,
-          length: 0,
-          type: "image/png",
-        },
+        link: `${lang}/posts/${slug}`
       };
     }),
-    stylesheet: "/rss.xsl",
   });
 }

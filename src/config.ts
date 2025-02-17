@@ -1,13 +1,11 @@
 export const SITE = {
   title: {
-    en: "BlockLune's Blog",
-    zh: "BlockLune's Blog",
+    en: "Nikesh's Blog",
   },
   description: {
-    en: "A blog about development and life, powered by Astro.",
-    zh: "一个关于开发和生活的博客，由 Astro 驱动。",
+    en: "A blog exploring technology, security, and beyond.",
   },
-  url: "https://blocklune.cc",
+  url: "https://nikeshmhr.github.io",
   og: {
     imageUrl: "/ogimage.jpg",
   },
@@ -16,28 +14,21 @@ export const SITE = {
       id: "ab70a625-ed64-484a-9c34-803e1c598bf9",
     },
   },
-  searchEngine: {
-    bing: "90E919A44E934714DF5640B4D8631CC9",
-    baidu: "codeva-IdRrdx3ejJ",
-    sogou: "d61GLZA6rw",
-    threeSixZero: "3df8dc4fd80a1899f65048a77e408c40",
-  },
 };
 
 export const AUTHOR = {
-  name: "BlockLune",
-  link: "https://github.com/BlockLune",
-  email: "i@blocklune.cc",
+  name: "Nikesh",
+  link: "https://github.com/nikeshmhr",
+  email: "nikeshmhr@gmail.com",
   bio: {
-    en: "A student majoring in computer science and technology.",
-    zh: "一名计算机科学与技术专业的学生。",
+    en: "A curious software developer dabbling in different rabbit holes.",
   },
 };
 
 export const SOCIALS = [
   {
     name: "Github",
-    href: "https://github.com/BlockLune",
+    href: "https://github.com/nikeshmhr",
     linkTitle: `${AUTHOR.name} on Github`,
   },
   {
@@ -47,6 +38,7 @@ export const SOCIALS = [
   },
 ];
 
+// TODO: remove license from here later
 export const MISC = {
   more: {
     marks: ["<!--more-->", "<!-- more -->"],

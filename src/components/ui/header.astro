@@ -1,7 +1,6 @@
 ---
 import Moon from "@/components/icons/moon.astro";
 import Rss from "@/components/icons/rss.astro";
-import LanguagePicker from "@/components/ui/language-picker.astro";
 import { SITE } from "@/config";
 import { type Lang, useTranslatedPath, useTranslations } from "@/utils/i18n";
 
@@ -45,7 +44,5 @@ const translatePath = useTranslatedPath(lang);
     <a class="ghost-link-underline" href={translatePath("/about")}>
       {t("nav.about")}
     </a>
-    |
-    <LanguagePicker />
   </div>
 </header>
