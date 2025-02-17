@@ -1,0 +1,51 @@
+---
+import Moon from "@/components/icons/moon.astro";
+import Rss from "@/components/icons/rss.astro";
+import LanguagePicker from "@/components/ui/language-picker.astro";
+import { SITE } from "@/config";
+import { type Lang, useTranslatedPath, useTranslations } from "@/utils/i18n";
+
+const { lang, asH1 = true } = Astro.props;
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+
+<header
+  class="mb-14 flex flex-col gap-2 justify-center md:flex-row md:justify-between md:items-center"
+>
+  <div class="flex gap-2 itmes-center justify-center">
+    <a
+      href={translatePath("/")}
+      class="ghost-link flex items-center justify-center md:justify-start gap-2 font-black text-2xl"
+    >
+      <Moon />
+      {
+        asH1 ? (
+          <h1 class="font-black text-2xl">{SITE.title[lang as Lang]}</h1>
+        ) : (
+          <p class="font-black text-2xl">{SITE.title[lang as Lang]}</p>
+        )
+      }
+    </a>
+    <a
+      href="/rss.xml"
+      class="hover:text-dracula-orange transition"
+      aria-label="RSS Feed"
+    >
+      <Rss class="w-6 h-6" />
+    </a>
+  </div>
+  <div class="flex justify-center md:justify-end items-center gap-4">
+    <a class="ghost-link-underline" href={translatePath("/")}>
+      {t("nav.home")}
+    </a>
+    <a class="ghost-link-underline" href={translatePath("/tags")}>
+      {t("nav.tags")}
+    </a>
+    <a class="ghost-link-underline" href={translatePath("/about")}>
+      {t("nav.about")}
+    </a>
+    |
+    <LanguagePicker />
+  </div>
+</header>

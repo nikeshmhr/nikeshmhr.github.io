@@ -1,0 +1,13 @@
+---
+import { SITE } from "@/config";
+import type { Lang } from "@/utils/i18n";
+
+const { lang } = Astro.props;
+---
+
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title={SITE.title[lang as Lang]}
+  href={new URL("rss.xml", SITE.url)}
+/>

@@ -1,0 +1,105 @@
+---
+import DateTag from "@/components/ui/tags/date-tag";
+import DateStatusTag from "@/components/ui/tags/date-status-tag.tsx";
+import LabelTag from "@/components/ui/tags/label-tag.tsx";
+import LicenseTag from "@/components/ui/tags/license-tag.tsx";
+import NotSupportedLangTag from "@/components/ui/tags/not-supported-lang-tag.tsx";
+import Prose from "@/components/style/prose.astro";
+import TocCard from "./cards/toc-card.tsx";
+import { MISC } from "@/config";
+import { getUniqueLowerCaseTagMap } from "@/utils/post";
+import { render } from "astro:content";
+import { getDiffInDays } from "@/utils/date";
+
+const { lang, actualLang, post, headings } = Astro.props;
+const { Content } = await render(post);
+
+let licenseEnabled = MISC.license?.enabled;
+if (post.data.license && post.data.license === "none") {
+  licenseEnabled = false;
+}
+const license = post.data.license || MISC.license.default.name;
+const licenseLink = post.data.licenseLink || MISC.license.default.link;
+const title = post.data.title;
+const publishedAt = post.data.date;
+const updatedAt = post.data.updated;
+const latestDate = updatedAt || publishedAt;
+const diffInDays = getDiffInDays(new Date(), latestDate);
+---
+
+<article>
+  <h1 class="text-dracula-pink font-black text-4xl">{title}</h1>
+  <div class="flex flex-wrap gap-2 mt-4">
+    <!-- date tags -->
+    <DateTag lang={lang} date={publishedAt} type="published" />
+    {updatedAt && <DateTag lang={lang} date={updatedAt} type="updated" />}
+    <DateStatusTag lang={lang} diffInDays={diffInDays} />
+
+    <!-- language tag -->
+    {lang !== actualLang && <NotSupportedLangTag lang={lang} />}
+
+    <!-- license tag -->
+    {
+      licenseEnabled && (
+        <LicenseTag lang={lang} license={license} link={licenseLink} />
+      )
+    }
+
+    <!-- label tags -->
+    {
+      Array.from(getUniqueLowerCaseTagMap(post.data.tags).keys()).map((tag) => (
+        <LabelTag lang={lang} label={tag} type="link" />
+      ))
+    }
+  </div>
+
+  {
+    headings && headings.length > 0 && (
+      <div class="block 2xl:hidden mt-10">
+        <TocCard headings={headings} lang={lang} client:load />
+      </div>
+    )
+  }
+
+  <div class="mt-10">
+    <Prose>
+      <Content />
+    </Prose>
+  </div>
+</article>
+
+<script>
+  let copyButtonLabel = "Copy";
+  let codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+  for (let codeBlock of codeBlocks) {
+    let wrapper = document.createElement("div");
+    wrapper.style.position = "relative";
+    let copyButton = document.createElement("button");
+    copyButton.className = "copy-code";
+    copyButton.innerHTML = copyButtonLabel;
+
+    codeBlock.setAttribute("tabindex", "0");
+    codeBlock.appendChild(copyButton);
+
+    codeBlock.parentNode!.insertBefore(wrapper, codeBlock);
+    wrapper.appendChild(codeBlock);
+
+    copyButton.addEventListener("click", async () => {
+      await copyCode(codeBlock, copyButton);
+    });
+  }
+
+  async function copyCode(block: HTMLElement, button: HTMLElement) {
+    let code = block.querySelector("code");
+    let text = code?.innerText || "";
+
+    await navigator.clipboard.writeText(text);
+
+    button.innerText = "Copied";
+
+    setTimeout(() => {
+      button.innerText = copyButtonLabel;
+    }, 1000);
+  }
+</script>
