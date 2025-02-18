@@ -26,6 +26,11 @@ export default {
             "--tw-prose-code": theme("colors.dracula-purple.DEFAULT"),
             "--tw-prose-th-borders": theme("colors.dracula-dark.DEFAULT"),
             "--tw-prose-td-borders": theme("colors.dracula-dark.DEFAULT"),
+            "code": {
+              '&::before, &::after': {
+                content: '""',
+              },
+            }
           },
         },
       }),
