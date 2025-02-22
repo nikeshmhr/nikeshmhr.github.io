@@ -1,6 +1,6 @@
-import BaseTag from "./base-tag";
 import { getColor, getDiffInDays, getFormattedDate } from "@/utils/date";
 import { type Lang, useTranslations } from "@/utils/i18n";
+import BaseTag from "./base-tag";
 
 export default function DateTag({
   lang,
@@ -18,11 +18,7 @@ export default function DateTag({
   const textColor = `text-dracula-${color}`;
 
   const titleText =
-    color === "green"
-      ? t("post.newlyUpdatedMsg")
-      : color === "red"
-      ? t("post.oldPostWarningMsg")
-      : undefined;
+    color === "green" ? t("post.newlyUpdatedMsg") : color === "red" ? t("post.oldPostWarningMsg") : undefined;
 
   /**
    * If type is given, it will display the type and the date.
@@ -35,15 +31,7 @@ export default function DateTag({
     <div className="flex items-center">
       {type ? (
         <BaseTag>
-          <span
-            className={
-              type === "published"
-                ? "text-dracula-orange"
-                : "text-dracula-green"
-            }
-          >
-            {t(`${type}At`)}
-          </span>{" "}
+          <span className={type === "published" ? "text-dracula-orange" : "text-dracula-green"}>{t(`${type}At`)}</span>{" "}
           <span>{formattedDate}</span>
         </BaseTag>
       ) : (

@@ -1,12 +1,12 @@
 ---
-import BaseLayout from "@/layouts/base-layout.astro";
-import MarkdownPost from "@/components/ui/markdown-post.astro";
-import TocCard from "@/components/ui/cards/toc-card";
-import { classifyByLangs, getLangFromId } from "@/utils/post";
 import { getCollection, getEntry } from "astro:content";
-import { getDescFromMdString } from "@/utils/markdown";
 import { render } from "astro:content";
+import TocCard from "@/components/ui/cards/toc-card";
+import MarkdownPost from "@/components/ui/markdown-post.astro";
+import BaseLayout from "@/layouts/base-layout.astro";
 import { type Lang, supportedLangs } from "@/utils/i18n";
+import { getDescFromMdString } from "@/utils/markdown";
+import { classifyByLangs, getLangFromId } from "@/utils/post";
 
 export async function getStaticPaths() {
   async function getPost(currentLang: Lang, slug: string) {
@@ -41,8 +41,7 @@ export async function getStaticPaths() {
 const { post, headings } = Astro.props;
 const { lang, slug } = Astro.params;
 const actualLangOfPost = getLangFromId(post.id);
-const ogImageUrlToUse =
-  post?.data.ogImageUrl || `/${actualLangOfPost}/og-images/${slug}.png`;
+const ogImageUrlToUse = post?.data.ogImageUrl || `/${actualLangOfPost}/og-images/${slug}.png`;
 ---
 
 <BaseLayout

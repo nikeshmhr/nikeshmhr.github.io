@@ -1,6 +1,6 @@
 import avatarImage from "@/assets/avatar.webp";
-import type { Lang } from "@/utils/i18n";
 import { AUTHOR, SOCIALS } from "@/config";
+import type { Lang } from "@/utils/i18n";
 import { motion, useReducedMotion } from "motion/react";
 
 export default function BusinessCard({ lang }: { lang: Lang }) {

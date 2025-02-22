@@ -27,17 +27,9 @@ export default function LabelTag({
       <span className="text-dracula-purple">{text}</span>
     </BaseTag>
   );
-  const linkTagOrNot =
-    type === "link" ? (
-      <a href={`/${lang}/tags/${label}`}>{tagComponent}</a>
-    ) : (
-      tagComponent
-    );
+  const linkTagOrNot = type === "link" ? <a href={`/${lang}/tags/${label}`}>{tagComponent}</a> : tagComponent;
   const animatedLinkTagOrNot = animate ? (
-    <motion.div
-      initial={{ opacity: initialOpacity, x: initialX }}
-      whileInView={{ opacity: 1, x: 0 }}
-    >
+    <motion.div initial={{ opacity: initialOpacity, x: initialX }} whileInView={{ opacity: 1, x: 0 }}>
       {linkTagOrNot}
     </motion.div>
   ) : (

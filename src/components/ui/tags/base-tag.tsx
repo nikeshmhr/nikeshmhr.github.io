@@ -1,5 +1,5 @@
-import React from "react";
 import clsx from "clsx";
+import type React from "react";
 
 export default function BaseTag({
   children,
@@ -21,7 +21,7 @@ export default function BaseTag({
         "inline-block",
         large ? "text-4xl px-4 py-2" : "px-2 py-1",
         hoverable ? "card-hoverable" : "card-static",
-        containerClass
+        containerClass,
       )}
     >
       {children}

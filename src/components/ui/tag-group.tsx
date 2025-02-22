@@ -1,8 +1,8 @@
-import Fuse from "fuse.js";
 import LabelTag from "@/components/ui/tags/label-tag";
 import { type Lang, useTranslations } from "@/utils/i18n";
-import { useDebounce } from "use-debounce";
+import Fuse from "fuse.js";
 import { useState } from "react";
+import { useDebounce } from "use-debounce";
 
 export default function TagGroup({
   lang,
@@ -35,11 +35,7 @@ export default function TagGroup({
         <input
           id="search"
           type="text"
-          placeholder={
-            t("search.placeholder.firstPart") +
-            numberOfTags +
-            t("search.placeholder.secondPart.tag")
-          }
+          placeholder={t("search.placeholder.firstPart") + numberOfTags + t("search.placeholder.secondPart.tag")}
           className="card-input"
           value={query}
           onChange={handleOnSearch}
@@ -50,24 +46,10 @@ export default function TagGroup({
           ? Array.from(tagMap.entries())
               .sort((a, b) => b[1] - a[1])
               .map(([tag, count]) => (
-                <LabelTag
-                  lang={lang}
-                  label={tag}
-                  count={count}
-                  type="link"
-                  key={tag}
-                  animate={true}
-                />
+                <LabelTag lang={lang} label={tag} count={count} type="link" key={tag} animate={true} />
               ))
           : results.map((tag) => (
-              <LabelTag
-                lang={lang}
-                label={tag}
-                count={tagMap.get(tag)}
-                type="link"
-                key={tag}
-                animate={true}
-              />
+              <LabelTag lang={lang} label={tag} count={tagMap.get(tag)} type="link" key={tag} animate={true} />
             ))}
       </div>
     </div>

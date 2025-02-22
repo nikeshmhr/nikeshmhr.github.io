@@ -21,7 +21,7 @@ export async function GET(context: any) {
         description: getDescFromMdString(post.body),
         author: AUTHOR.name,
         pubDate: post.data.date,
-        link: `${lang}/posts/${slug}`
+        link: `${lang}/posts/${slug}`,
       };
     }),
   });

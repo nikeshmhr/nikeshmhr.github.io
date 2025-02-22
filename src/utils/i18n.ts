@@ -32,8 +32,7 @@ export const ui = {
     "post.oldPostWarningMsg": `Last update over ${MISC.dateTag.daysToBeRed} days ago`,
     "post.license": "Licensed under",
     "post.notSupportedLang": "Language not supported",
-    "post.notSupportedLangDescription":
-      "Sorry, your language is unavailable for this post.",
+    "post.notSupportedLangDescription": "Sorry, your language is unavailable for this post.",
   },
 } as const;
 

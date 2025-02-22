@@ -14,8 +14,7 @@ export default function LicenseTag({
   return (
     <a href={link} target="_blank" rel="noreferrer nofollow">
       <BaseTag hoverable>
-        <span className="text-dracula-cyan">{t("post.license")}</span>{" "}
-        <span>{license}</span>
+        <span className="text-dracula-cyan">{t("post.license")}</span> <span>{license}</span>
       </BaseTag>
     </a>
   );

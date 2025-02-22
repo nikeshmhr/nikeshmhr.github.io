@@ -1,7 +1,7 @@
 // https://dev.to/silviaespanagil/how-to-create-a-scroll-to-top-button-with-react-17do
 import UpIcon from "@/components/icons/up";
-import { useState, useEffect } from "react";
-import { motion, useReducedMotion, AnimatePresence } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { useEffect, useState } from "react";
 
 export default function GoTop() {
   const shouldReduceMotion = useReducedMotion();

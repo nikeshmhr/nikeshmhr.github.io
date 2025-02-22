@@ -1,8 +1,8 @@
-import type { APIRoute } from "astro";
-import { classifyByLangs } from "@/utils/post";
-import { generateOgImageForPost } from "@/utils/og";
 import { getCollection, getEntry } from "astro:content";
 import { type Lang, supportedLangs } from "@/utils/i18n";
+import { generateOgImageForPost } from "@/utils/og";
+import { classifyByLangs } from "@/utils/post";
+import type { APIRoute } from "astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");

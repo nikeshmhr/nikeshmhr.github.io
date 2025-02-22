@@ -1,8 +1,8 @@
-import clsx from "clsx";
-import type { MarkdownHeading } from "astro";
 import { MISC } from "@/config";
 import { type Lang, useTranslations } from "@/utils/i18n";
-import { useEffect, useState, useRef } from "react";
+import type { MarkdownHeading } from "astro";
+import clsx from "clsx";
+import { useEffect, useRef, useState } from "react";
 
 export default function TocCard({
   headings,
@@ -12,9 +12,7 @@ export default function TocCard({
   lang: Lang;
 }) {
   const t = useTranslations(lang);
-  const filtered = headings.filter(
-    (heading) => heading.depth > 1 && heading.depth < 4
-  );
+  const filtered = headings.filter((heading) => heading.depth > 1 && heading.depth < 4);
   const [activeId, setActiveId] = useState<string>("");
   const tocRef = useRef<HTMLUListElement>(null);
 
@@ -42,9 +40,7 @@ export default function TocCard({
   // auto scroll to active element
   useEffect(() => {
     if (activeId && tocRef.current) {
-      const activeElement = tocRef.current.querySelector(
-        `a[href="#${activeId}"]`
-      )?.parentElement;
+      const activeElement = tocRef.current.querySelector(`a[href="#${activeId}"]`)?.parentElement;
       if (activeElement) {
         const container = tocRef.current;
         const elementTop = activeElement.offsetTop;
@@ -67,16 +63,10 @@ export default function TocCard({
       <h2 className="text-2xl font-bold">{t("toc")}</h2>
       <ul ref={tocRef} className="space-y-2 max-h-96 overflow-y-auto">
         {filtered.map((heading) => (
-          <li
-            key={heading.slug}
-            style={{ marginLeft: `${heading.depth - 2}rem` }}
-          >
+          <li key={heading.slug} style={{ marginLeft: `${heading.depth - 2}rem` }}>
             <a
               href={`#${heading.slug}`}
-              className={clsx(
-                "ghost-link-underline",
-                activeId === heading.slug && "text-dracula-orange"
-              )}
+              className={clsx("ghost-link-underline", activeId === heading.slug && "text-dracula-orange")}
             >
               {heading.text}
             </a>

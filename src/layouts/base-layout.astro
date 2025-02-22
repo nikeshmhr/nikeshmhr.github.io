@@ -13,17 +13,15 @@ import Sitemap from "@/components/head/sitemap.astro";
 import Umami from "@/components/head/umami.astro";
 
 import Footer from "@/components/ui/footer.astro";
-import Header from "@/components/ui/header.astro";
 import GoTop from "@/components/ui/go-top.tsx";
+import Header from "@/components/ui/header.astro";
 
 import { SITE } from "@/config";
 import { getLangFromUrl } from "@/utils/i18n";
 
 const { title, description, ogImageUrl, headerAsH1 = true } = Astro.props;
 const [lang] = getLangFromUrl(Astro.url.pathname);
-const pageTitle = title
-  ? `${title} | ${SITE.title[lang]}`
-  : `${SITE.title[lang]} | ${SITE.description[lang]}`;
+const pageTitle = title ? `${title} | ${SITE.title[lang]}` : `${SITE.title[lang]} | ${SITE.description[lang]}`;
 ---
 
 <html lang={lang} class="scroll-smooth">
