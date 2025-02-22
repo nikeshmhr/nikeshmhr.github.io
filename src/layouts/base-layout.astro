@@ -1,0 +1,55 @@
+---
+import { ClientRouter } from "astro:transitions";
+
+import "@/styles/global.css";
+import "@/styles/mathjax.css";
+import "@/styles/rehype-github-alerts.css";
+
+import Favicon from "@/components/head/favicon.astro";
+import FontPreload from "@/components/head/font-preload.astro";
+import Meta from "@/components/head/meta.astro";
+import RssLink from "@/components/head/rss-link.astro";
+import Sitemap from "@/components/head/sitemap.astro";
+import Umami from "@/components/head/umami.astro";
+
+import Footer from "@/components/ui/footer.astro";
+import Header from "@/components/ui/header.astro";
+import GoTop from "@/components/ui/go-top.tsx";
+
+import { SITE } from "@/config";
+import { getLangFromUrl } from "@/utils/i18n";
+
+const { title, description, ogImageUrl, headerAsH1 = true } = Astro.props;
+const [lang] = getLangFromUrl(Astro.url.pathname);
+const pageTitle = title
+  ? `${title} | ${SITE.title[lang]}`
+  : `${SITE.title[lang]} | ${SITE.description[lang]}`;
+---
+
+<html lang={lang} class="scroll-smooth">
+  <head>
+    <Meta
+      lang={lang}
+      description={description}
+      pageTitle={pageTitle}
+      ogImageUrl={ogImageUrl}
+    />
+    <Favicon />
+    <FontPreload />
+    <RssLink lang={lang} />
+    <Sitemap />
+    <Umami />
+    <title>{pageTitle}</title>
+    <ClientRouter />
+  </head>
+  <body class="bg-dracula-darker text-dracula-light">
+    <div class="mx-4 md:mx-auto max-w-2xl py-12">
+      <Header lang={lang} asH1={headerAsH1} />
+      <main>
+        <slot />
+      </main>
+      <Footer lang={lang} />
+    </div>
+    <GoTop client:load />
+  </body>
+</html>

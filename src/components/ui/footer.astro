@@ -1,0 +1,12 @@
+---
+import { SITE } from "@/config";
+import type { Lang } from "@/utils/i18n";
+
+const { lang } = Astro.props;
+---
+
+<footer class="mt-14 flex flex-col items-center gap-2 w-full">
+  <p class="text-lg">
+    {SITE.title[lang as Lang]}
+  </p>
+</footer>

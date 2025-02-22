@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import { defaultLang } from "@/utils/i18n";
+import { getLangFromId, getSlugFromId, makeUniqueByLang } from "@/utils/post";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+
+  const uniquePosts = makeUniqueByLang(posts, defaultLang);
+  const paths = uniquePosts.map((post) => {
+    const lang = getLangFromId(post.id);
+    const slug = getSlugFromId(post.id);
+    return {
+      params: { slug },
+      props: { to: `${lang}/posts/${slug}` },
+    };
+  });
+
+  return paths;
+}
+
+const { to } = Astro.props;
+return Astro.rewrite(to);
+---
