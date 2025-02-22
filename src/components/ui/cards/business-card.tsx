@@ -22,7 +22,7 @@ export default function BusinessCard({ lang }: { lang: Lang }) {
         whileTap={{ scale: 0.9 }}
       />
       <div className="flex flex-col gap-4 text-center sm:text-left">
-        <h2 className="font-bold text-3xl text-dracula-pink">{AUTHOR.name}</h2>
+        <h2 className="font-bold text-3xl text-dracula-orange">{AUTHOR.name}</h2>
         <p className="text-pretty">{AUTHOR.bio[lang]}</p>
         <p className="flex gap-4 justify-center sm:justify-start">
           {SOCIALS.map((social) => (

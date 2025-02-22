@@ -28,7 +28,7 @@ const diffInDays = getDiffInDays(new Date(), latestDate);
 ---
 
 <article>
-  <h1 class="text-dracula-pink font-black text-4xl">{title}</h1>
+  <h1 class="text-dracula-orange font-black text-4xl">{title}</h1>
   <div class="flex flex-wrap gap-2 mt-4">
     <!-- date tags -->
     <DateTag lang={lang} date={publishedAt} type="published" />
@@ -37,13 +37,6 @@ const diffInDays = getDiffInDays(new Date(), latestDate);
 
     <!-- language tag -->
     {lang !== actualLang && <NotSupportedLangTag lang={lang} />}
-
-    <!-- license tag -->
-    {
-      licenseEnabled && (
-        <LicenseTag lang={lang} license={license} link={licenseLink} />
-      )
-    }
 
     <!-- label tags -->
     {
@@ -69,7 +62,7 @@ const diffInDays = getDiffInDays(new Date(), latestDate);
 </article>
 
 <script>
-  let copyButtonLabel = "Copy Code";
+  let copyButtonLabel = "Copy";
   let codeBlocks = Array.from(document.querySelectorAll("pre"));
 
   for (let codeBlock of codeBlocks) {

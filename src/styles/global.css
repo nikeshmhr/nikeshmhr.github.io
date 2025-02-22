@@ -47,7 +47,7 @@
   }
 
   .ghost-link {
-    @apply text-dracula-light hover:text-dracula-pink transition;
+    @apply text-dracula-light hover:text-dracula-orange transition;
   }
 
   .ghost-link-underline {

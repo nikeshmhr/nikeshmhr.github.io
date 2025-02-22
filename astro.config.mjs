@@ -21,9 +21,8 @@ export default defineConfig({
       theme: "dracula",
       wrap: true,
       langAlias: {
-        C: "c",
-        zshrc: "zsh",
-      },
+        "bash": "sh"
+      }
     },
     remarkPlugins: [remarkDescPlugin, remarkMath],
     rehypePlugins: [

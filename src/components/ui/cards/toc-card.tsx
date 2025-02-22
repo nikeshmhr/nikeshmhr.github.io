@@ -75,7 +75,7 @@ export default function TocCard({
               href={`#${heading.slug}`}
               className={clsx(
                 "ghost-link-underline",
-                activeId === heading.slug && "text-dracula-pink"
+                activeId === heading.slug && "text-dracula-orange"
               )}
             >
               {heading.text}

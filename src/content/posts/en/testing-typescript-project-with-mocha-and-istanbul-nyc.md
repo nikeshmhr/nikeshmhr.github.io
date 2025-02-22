@@ -14,7 +14,7 @@ title: Testing Typescript project with Mocha and Istanbul NYC
 ---
 
 [Mocha](https://mochajs.org/) is a popular JS test framework, and [Istanbul](https://istanbul.js.org/) is a popular JS test coverage tool. How to use them when it comes to Typescript? This post shows a simple demo.
-
+![a](/public/ogimage.jpg)
 <!--more-->
 
 ## Creating a basic TS Project
