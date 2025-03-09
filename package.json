@@ -1,15 +1,15 @@
 {
-  "name": "@jackyzha0/quartz",
-  "description": "🌱 publish your digital garden and notes as a website",
+  "name": "nikeshmhr-blog",
+  "description": "obsidian notes as blog",
   "private": true,
   "version": "4.4.0",
   "type": "module",
-  "author": "jackyzha0 <j.zhao2k19@gmail.com>",
+  "author": "nikeshmhr <nikeshmhr@gmail.com>",
   "license": "MIT",
-  "homepage": "https://quartz.jzhao.xyz",
+  "homepage": "https://nikeshmhr.github.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jackyzha0/quartz.git"
+    "url": "https://github.com/nikeshmhr/nikeshmhr.github.io.git"
   },
   "scripts": {
     "quartz": "./quartz/bootstrap-cli.mjs",
