@@ -1,5 +1,7 @@
 ---
 title: CHIP-8 Interpreter
+tags:
+  - emulator
 ---
 ## Description
 
