@@ -11,13 +11,3 @@ The CHIP-8 Emulator is a web-based emulator for running CHIP-8 programs. It fait
 ## Links
 - [Demo](https://nikeshmhr.github.io/chip-8-emulator)
 - [Source code](https://github.com/nikeshmhr/chip-8-emulator)
-
-```typescript title="test.ts"
-class Animal {
-	constructor(private readonly name) {}
-
-	eat() {
-		console.log('eating');
-	}
-}
-```
