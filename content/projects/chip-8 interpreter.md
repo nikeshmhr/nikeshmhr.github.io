@@ -15,5 +15,5 @@ Typescript, Webpack, HTML
 - [ ] Debugger
 - [ ] BYOR (Bring You Own ROM) interface
 ## Links
-- [Demo](https://nikeshmhr.github.io/chip-8-emulator)
-- [Source code](https://github.com/nikeshmhr/chip-8-emulator)
+- <a href="https://nikeshmhr.github.io/chip-8-emulator" target="_blank">Demo</a>
+- <a href="https://github.com/nikeshmhr/chip-8-emulator" target="_blank">Source code</a>
